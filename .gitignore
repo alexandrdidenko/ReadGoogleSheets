@@ -97,3 +97,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+ ReadGoogleSheets-9599725075e2.json
+ run_update_GD_registration_tablets.cmd

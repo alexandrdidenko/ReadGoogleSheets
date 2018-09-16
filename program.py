@@ -33,7 +33,7 @@ for cell in cell_list:
 		wks.update_cell(i, 16, cust_id)
 		model_id = '''=ВПР(J%s;'модель'!C:E;3;0)''' %(i)
 		wks.update_cell(i, 17, model_id)
-		sql = '''="INSERT INTO `pda_tbl_tablets_list` (`IMEI_1`, `IMEI_2`, `device_number`, `device_model_id`, `owners_id`, `customers_cust_id`, `purchase_date`, `coment`, `technical_condition_id`, `Decommissioning_date`, `is_active`, `created`, `updated`, `updated_by`) VALUES ('"&K%s&"', "&ЕСЛИ(L%s = "";"NULL";СЦЕПИТЬ("'";L%s;"'"))&", '"&M%s&"', '"&Q%s&"', 2, '"&P%s&"', curdate(), NULL, 1, NULL, 1, NOW(), NOW(), 1);"''' %(i, i, i, i, i, i)
+		sql = '''="INSERT INTO tbl_tablets_list (IMEI_1, IMEI_2, device_number, device_model_id, owners_id, customers_cust_id, purchase_date, coment, technical_condition_id, Decommissioning_date, is_active, created, updated, updated_by) VALUES ('"&K%s&"', "&ЕСЛИ(L%s = "";"NULL";СЦЕПИТЬ("'";L%s;"'"))&", '"&M%s&"', '"&Q%s&"', 2, '"&P%s&"', curdate(), NULL, 1, NULL, 1, NOW(), NOW(), 1);"''' %(i, i, i, i, i, i)
 		wks.update_cell(i, 18, sql)
 		sql_caps_ua = '''="INSERT INTO `device` (`device_id`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES ('"&K%s&"', NOW(), NOW(), 'adidenko47', 'adidenko47');"''' %(i)
 		wks.update_cell(i, 19, sql_caps_ua)
